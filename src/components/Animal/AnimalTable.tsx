@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-  Paper, Button, IconButton, CircularProgress
+  Paper, Button, IconButton
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BanIcon from '@mui/icons-material/Block';
-import EditAnimalForm from './EditAnimalForm'; // Assuming you have EditAnimalForm component
-import { Animal } from "../../pages/AnimalsPage"; // Adjust import
+import EditAnimalForm from './EditAnimalForm';
+import { Animal } from "../../pages/AnimalsPage";
 
 interface AnimalTableProps {
   animals: Animal[],

@@ -57,9 +57,3 @@ export const deleteAnimal = async (id: string) => {
   const response = await api.delete(`/animals/${id}`);
   return response.data;
 };
-
-// Seed Endpoint
-export const seedDatabase = async () => {
-  const response = await api.post('/seed');
-  return response.data;
-};

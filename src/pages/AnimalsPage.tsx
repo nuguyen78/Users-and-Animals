@@ -26,7 +26,9 @@ const AnimalsPage: React.FC = () => { // Change UsersPage to AnimalsPage
 
     // Fetch animals data from API on component mount
     useEffect(() => {
-        fetchAnimals();
+        (async () => {
+            await fetchAnimals();
+        })();
     }, []);
 
     // Function to fetch animals data from API

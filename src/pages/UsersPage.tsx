@@ -26,7 +26,9 @@ const UsersPage: React.FC = () => {
 
     // Fetch users data from API on component mount
     useEffect(() => {
-        fetchUsers();
+        (async () => {
+            await fetchUsers();
+        })();
     }, []);
 
     // Function to fetch users data from API
