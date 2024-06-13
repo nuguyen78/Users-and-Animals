@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import UsersPage from './pages/UsersPage';
+import AnimalsPage from './pages/AnimalsPage';
+import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h6" style={{ flexGrow: 1 }}>
+                        Users and Animals
+                    </Typography>
+                    <Button color="inherit" component={Link} to="/">Users</Button>
+                    <Button color="inherit" component={Link} to="/animals">Animals</Button>
+                </Toolbar>
+            </AppBar>
+            <Container style={{ marginTop: '20px', marginBottom: '50px'}}>
+                <Routes>
+                    <Route path="/" element={<UsersPage />} />
+                    <Route path="/animals" element={<AnimalsPage />} />
+                </Routes>
+            </Container>
+        </Router>
+    );
+};
 
 export default App;
